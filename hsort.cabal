@@ -1,0 +1,67 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1f8b55ec45484c441cfbc10cf52ed0c6d97999a2e794c76a8d8944cfce57bd4f
+
+name:           hsort
+version:        0.1.0.0
+description:    Please see the README
+homepage:       https://github.com/7h3kk1d/hsort#readme
+bug-reports:    https://github.com/7h3kk1d/hsort/issues
+author:         Alexander Bandukwala
+maintainer:     7h3kk1d@gmail.com
+copyright:      2019 Alexander Bandukwala
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/7h3kk1d/hsort
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_hsort
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable hsort
+  main-is: Main.hs
+  other-modules:
+      Paths_hsort
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts
+  build-depends:
+      base >=4.7 && <5
+    , hsort
+    , optparse-applicative >= 0.15 && <= 0.16
+    , haskeline >= 0.7.5.0
+
+  default-language: Haskell2010
+
+test-suite hsort-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hsort
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts
+  build-depends:
+      base >=4.7 && <5
+    , hsort
+    , hspec >= 2.7 && < 2.8
+    , QuickCheck >= 2.13 && < 2.14
+  default-language: Haskell2010
