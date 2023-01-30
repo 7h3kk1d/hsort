@@ -1,7 +1,7 @@
 module Main where
 
 import           Data.Semigroup      ((<>))
-import           Lib
+import Lib ( mergeSortM )
 import           Options.Applicative
 import System.IO (hFlush, stdout)
 
